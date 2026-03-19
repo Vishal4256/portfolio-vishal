@@ -57,12 +57,12 @@ function App() {
       
       {/* Subtle top gradient overlay */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent" />
       </div>
 
       <Navbar />
 
-      <main className="relative z-10">
+      <main className="relative z-10 pt-20 md:pt-24">
         <Hero />
         <About />
         <Skills />
