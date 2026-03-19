@@ -50,8 +50,8 @@ function App() {
 
   return (
     <>
-      <div id="scroll-progress" className="fixed top-0 left-0 z-50 h-1 w-0" />
-      <div className="relative min-h-screen bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors">
+      <div id="scroll-progress" className="fixed top-0 left-0 z-[1000] h-1 w-0" />
+      <div className="relative min-h-screen overflow-x-hidden bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors">
       <BackgroundAnimation />
       <CursorShadow />
       
