@@ -62,7 +62,7 @@ function App() {
 
       <Navbar />
 
-      <main className="relative z-10 pt-20">
+      <main className="relative z-10 pt-10">
         <Hero />
         <About />
         <Skills />
