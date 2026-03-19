@@ -22,6 +22,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 function App() {
   useEffect(() => {
     ScrollTrigger.refresh();
+
+    const onCopy = (e) => e.preventDefault();
+    const onContext = (e) => e.preventDefault();
+
+    window.addEventListener('copy', onCopy);
+    window.addEventListener('contextmenu', onContext);
+
+    return () => {
+      window.removeEventListener('copy', onCopy);
+      window.removeEventListener('contextmenu', onContext);
+    };
   }, []);
 
   return (
