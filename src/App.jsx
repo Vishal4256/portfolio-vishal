@@ -23,6 +23,18 @@ function App() {
   useEffect(() => {
     ScrollTrigger.refresh();
 
+    const updateProgress = () => {
+      const progressEl = document.getElementById('scroll-progress');
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const trackHeight = doc.scrollHeight - doc.clientHeight;
+      const progress = trackHeight > 0 ? (scrollTop / trackHeight) * 100 : 0;
+      if (progressEl) progressEl.style.width = `${progress}%`;
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
     const onCopy = (e) => e.preventDefault();
     const onContext = (e) => e.preventDefault();
 
@@ -30,13 +42,16 @@ function App() {
     window.addEventListener('contextmenu', onContext);
 
     return () => {
+      window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('copy', onCopy);
       window.removeEventListener('contextmenu', onContext);
     };
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors">
+    <>
+      <div id="scroll-progress" className="fixed top-0 left-0 z-50 h-1 w-0" />
+      <div className="relative min-h-screen bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors">
       <BackgroundAnimation />
       <CursorShadow />
       
@@ -60,7 +75,8 @@ function App() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 
