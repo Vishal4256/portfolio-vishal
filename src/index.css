@@ -152,6 +152,85 @@
   .text-shadow {
     text-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
   }
+
+  /* Status Badge Pulsing Dot */
+  .status-pulse {
+    position: relative;
+    display: flex;
+    height: 8px;
+    width: 8px;
+  }
+
+  .status-pulse-inner {
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    height: 8px;
+    width: 8px;
+    background-color: #4ade80;
+  }
+
+  .status-pulse-ping {
+    position: absolute;
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 9999px;
+    background-color: #4ade80;
+    opacity: 0.75;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Small Glass Card for Avatar Info */
+  .glass-card-sm {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Badge Pill Style */
+  .badge-pill {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* Avatar Glow Effect */
+  .avatar-glow {
+    position: relative;
+  }
+
+  .avatar-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #06b6d4);
+    border-radius: 9999px;
+    z-index: -1;
+    opacity: 0.4; /* Reduced from 0.8 for softer light mode feel */
+    filter: blur(15px);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .dark .avatar-glow::before {
+    opacity: 0.8;
+    filter: blur(20px);
+  }
 }
 
 /* Scroll progress bar */
