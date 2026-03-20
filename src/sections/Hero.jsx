@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiMapPin, FiBook } from 'react-icons/fi';
+import { FiMail, FiArrowDown, FiBook } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-2">
+    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden pt-2">
       {/* Animated background blobs - Enhanced for Image 1 look */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large Primary Orb (Right) */}
@@ -47,12 +47,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] dark:opacity-40" />
       </div>
 
-      <div ref={containerRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 sm:pt-8 pb-6 sm:pb-10 lg:py-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-24">
+      <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-8 pb-16 sm:pb-10 lg:py-8">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 lg:gap-24">
           
           {/* Left Content */}
-          <div ref={leftContentRef} className="flex-1 text-center lg:text-left pt-10 lg:pt-0">
-            <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full mb-6 lg:mb-8 tracking-wide">
+          <div ref={leftContentRef} className="flex-1 text-center lg:text-left pt-4 lg:pt-0">
+            <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full mb-2 lg:mb-8 tracking-wide">
               <div className="status-pulse">
                 <span className="status-pulse-ping"></span>
                 <span className="status-pulse-inner"></span>
@@ -60,7 +60,7 @@ export default function Hero() {
               Available for opportunities
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[1.1] mb-6 lg:mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[1.1] mb-2 lg:mb-8 tracking-tight">
               <span className="text-gray-900 dark:text-white">Hi, I'm</span>
               <br />
               <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 dark:from-indigo-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
@@ -68,11 +68,11 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-slate-400 font-medium mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
+            <p className="text-sm sm:text-lg lg:text-xl text-gray-600 dark:text-slate-400 font-medium mb-4 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
               Building Scalable Web Apps & Solving Complex Problems
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10 lg:mb-12">
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6 lg:mb-12">
               <a href="#contact" className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold flex items-center gap-2 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] text-sm sm:text-base">
                 <FiMail /> Connect
               </a>
@@ -84,28 +84,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Socials and Badges */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 pt-8 border-t border-gray-200 dark:border-slate-800/50">
-              <div className="flex items-center gap-6 text-gray-400 dark:text-slate-400">
-                <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-white transition-colors">
-                  <FiGithub size={24} />
-                </a>
-                <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-white transition-colors">
-                  <FiLinkedin size={24} />
-                </a>
-                <a href={`mailto:${personalInfo.email}`} className="hover:text-indigo-600 dark:hover:text-white transition-colors">
-                  <FiMail size={24} />
-                </a>
-              </div>
-              <div className="flex gap-3 sm:gap-4">
-                <span className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                  LeetCode
-                </span>
-                <span className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                  Full Stack
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Right Content: Avatar */}
@@ -113,7 +91,7 @@ export default function Hero() {
             {/* Background Glow */}
             <div className="absolute inset-[-10%] bg-indigo-500/20 dark:bg-indigo-500/10 blur-[50px] rounded-full sm:hidden group-hover:opacity-100 transition-opacity" />
             
-            <div className="relative w-56 h-56 sm:w-64 md:w-80 lg:w-[450px] lg:h-[450px]">
+            <div className="relative w-40 h-40 sm:w-64 md:w-80 lg:w-[450px] lg:h-[450px]">
               {/* Glowing ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500/50 via-purple-500/50 to-cyan-500/50 dark:from-indigo-500 dark:via-purple-500 dark:to-cyan-400 p-1 animate-float shadow-xl" style={{ animationDelay: '1.5s' }}>
                 <div className="w-full h-full rounded-full bg-white dark:bg-[#020617] flex items-center justify-center overflow-hidden border-[4px] sm:border-[6px] border-white dark:border-[#020617]">
@@ -140,17 +118,18 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div ref={scrollRef} className="flex justify-center mt-2">
-          <button
-            onClick={scrollToAbout}
-            className="text-gray-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all animate-bounce flex flex-col items-center gap-1 group"
-            aria-label="Scroll down"
-          >
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Scroll</span>
-            <FiArrowDown size={24} />
-          </button>
-        </div>
+      </div>
+      
+      {/* Scroll Indicator - Pinned to Section Bottom */}
+      <div ref={scrollRef} className="absolute bottom-16 left-1/2 -translate-x-1/2 flex justify-center lg:relative lg:bottom-auto lg:left-auto lg:translate-x-0 mt-8 sm:mt-12 z-20">
+        <button
+          onClick={scrollToAbout}
+          className="text-gray-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all animate-bounce flex flex-col items-center gap-1 group"
+          aria-label="Scroll down"
+        >
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] group-hover:text-indigo-600 dark:hover:text-indigo-400">Scroll</span>
+          <FiArrowDown size={24} />
+        </button>
       </div>
     </section>
   );

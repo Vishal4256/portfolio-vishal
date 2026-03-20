@@ -56,7 +56,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-20 sm:py-24 overflow-hidden bg-white dark:bg-[#020617] mt-0">
+    <section id="about" ref={sectionRef} className="relative pt-0 pb-20 sm:py-24 overflow-hidden bg-white dark:bg-[#020617] mt-0">
       {/* Background Decorative Elements */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 blur-[100px] rounded-full pointer-events-none" />
