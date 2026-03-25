@@ -34,7 +34,7 @@ export const skills = {
     { name: "MongoDB", color: "from-green-500 to-green-700", icon: "mongodb" },
     { name: "MySQL", color: "from-blue-500 to-cyan-600", icon: "mysql" },
   ],
-  softSkills: ["Problem Solving", "Team Player", "Project Management", "Adaptability"],
+  softSkills: ["Problem Solving", "Team Player","Adaptability"],
 };
 
 export const projects = [
