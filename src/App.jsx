@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import CursorShadow from './components/CursorShadow';
+import Loader from './components/Loader';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
@@ -20,6 +21,17 @@ import Contact from './sections/Contact';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+
+  const handleStartReveal = useCallback(() => {
+    setIsLoaded(true);
+  }, []);
+
+  const handleFinished = useCallback(() => {
+    setShowLoader(false);
+  }, []);
+
   useEffect(() => {
     ScrollTrigger.refresh();
 
@@ -42,8 +54,14 @@ function App() {
 
   return (
     <>
+      {showLoader && (
+        <Loader 
+          onStartReveal={handleStartReveal} 
+          onFinished={handleFinished} 
+        />
+      )}
       <div id="scroll-progress" className="fixed top-0 left-0 z-[1000] h-1 w-0" />
-      <div className="relative min-h-screen overflow-x-hidden bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors">
+      <div className={`relative min-h-screen overflow-x-hidden bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 transition-colors ${!isLoaded ? 'h-screen overflow-hidden' : ''}`}>
       <BackgroundAnimation />
       <CursorShadow />
       
@@ -55,7 +73,7 @@ function App() {
       <Navbar />
 
       <main className="relative z-10 pt-10">
-        <Hero />
+        <Hero isLoaded={isLoaded} />
         <About />
         <Skills />
         <Projects />

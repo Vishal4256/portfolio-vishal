@@ -3,13 +3,15 @@ import { gsap } from 'gsap';
 import { FiMail, FiArrowDown, FiBook } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Hero() {
+export default function Hero({ isLoaded }) {
   const containerRef = useRef(null);
   const leftContentRef = useRef(null);
   const avatarRef = useRef(null);
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    if (!isLoaded) return;
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     
     tl.fromTo(leftContentRef.current.children, 
@@ -26,7 +28,7 @@ export default function Hero() {
       { opacity: 1, duration: 1 },
       '-=0.2'
     );
-  }, []);
+  }, [isLoaded]);
 
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
