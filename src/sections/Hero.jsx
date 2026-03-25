@@ -103,17 +103,6 @@ export default function Hero() {
                 </div>
               </div>
  
-              <div className="absolute bottom-2 -right-4 sm:bottom-10 sm:-right-10 lg:-right-16 animate-float-delayed z-20 scale-[0.8] sm:scale-90 lg:scale-100 origin-left sm:origin-center">
-                <div className="glass-card-sm bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-indigo-100 dark:border-slate-700/50 p-3 rounded-2xl flex items-center gap-3 shadow-2xl">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-                    <FiBook size={18} />
-                  </div>
-                  <div>
-                    <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-indigo-400 dark:text-slate-500 font-black">Degree</p>
-                    <p className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">B.Tech CSE</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -121,7 +110,7 @@ export default function Hero() {
       </div>
       
       {/* Scroll Indicator - Pinned to Section Bottom */}
-      <div ref={scrollRef} className="absolute bottom-16 left-1/2 -translate-x-1/2 flex justify-center lg:relative lg:bottom-auto lg:left-auto lg:translate-x-0 mt-8 sm:mt-12 z-20">
+      <div ref={scrollRef} className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
         <button
           onClick={scrollToAbout}
           className="text-gray-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all animate-bounce flex flex-col items-center gap-1 group"

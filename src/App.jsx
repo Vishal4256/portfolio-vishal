@@ -35,16 +35,8 @@ function App() {
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
 
-    const onCopy = (e) => e.preventDefault();
-    const onContext = (e) => e.preventDefault();
-
-    window.addEventListener('copy', onCopy);
-    window.addEventListener('contextmenu', onContext);
-
     return () => {
       window.removeEventListener('scroll', updateProgress);
-      window.removeEventListener('copy', onCopy);
-      window.removeEventListener('contextmenu', onContext);
     };
   }, []);
 
