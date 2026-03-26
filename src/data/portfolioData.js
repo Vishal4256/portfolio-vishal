@@ -57,7 +57,7 @@ export const projects = [
     description:
       "Built a feature-rich web platform for managing artworks, exhibitions, and artist registrations. Includes virtual tours, responsive UI, and secure backend with role-based access control.",
     technologies: ["HTML", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-    github: "https://github.com/himanshuraj89/Art_Gallery",
+    github: "https://github.com/Vishal4256/Art_Gallery",
     live: null,
     color: "from-cyan-500 to-blue-600",
     icon: "🎨",
