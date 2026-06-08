@@ -123,7 +123,7 @@ export const education = [
     degree: "Bachelor of Technology – Computer Science & Engineering",
     institution: "Lovely Professional University, Punjab",
     year: "2023 – present",
-    score: "CGPA: 7.24",
+    score: "CGPA: 6.97",
     icon: "🎓",
   },
   {
