@@ -157,7 +157,7 @@ export const codingProfiles = [
     link: "https://leetcode.com/u/vishal42564256/",
     color: "from-yellow-500 to-orange-600",
     icon: "code",
-    stats: "150+ Problems Solved",
+    stats: "220+ Problems Solved",
   },
   {
     platform: "GeeksforGeeks",
